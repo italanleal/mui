@@ -8,6 +8,8 @@ import {
     Grid,
     Box,
     Typography,
+    Button,
+    Stack
 } from '@mui/material';
 
 const theme = createTheme({
@@ -18,6 +20,7 @@ const theme = createTheme({
         },
         secondary: {
         main: '#19857b',
+        alternative: '#f4D242'
         },
         error: {
         main: colors.red.A400,
@@ -37,19 +40,23 @@ function App() {
         <Box sx={{ flexGrow: 1 }} >
           <Grid container spacing={'8px'}>
             <Grid item size={12}>
-              <Box sx={{ height: '8vh', bgcolor: 'primary.main'}} />
+              <Box sx={{ height: '8vh', bgcolor: 'primary.main'}} >
+              
+              </Box>
             </Grid>
             <Grid item size={2} offset={{ xs: 2}}>
-            <Box p={2} sx={{ height: '45vh', bgcolor: 'success.main'}} />
+            <Box p={2} sx={{ height: '45vh', bgcolor: 'success.main'}} >
+              <ColorButtons />
+            </Box>
             </Grid>
       
             <Grid item size={6}>
-              <Tipografia />
-              
+            <Tipografia />
             </Grid>
       
             <Grid item size={6} offset={{ xs: 2}}>
               <Box sx={{ height: '45vh', bgcolor: 'warning.main'}} >
+                <Layout />
               </Box>
             </Grid>
       
@@ -100,6 +107,56 @@ function Tipografia() {
       <Typography variant="overline" gutterBottom sx={{ display: 'block' }}>
         overline text
       </Typography>
+
   </Box>
+  );
+}
+
+function ColorButtons() {
+    return (
+      <Stack direction="column" spacing={2}>
+        <Button variant="contained" color="success">
+          Success
+        </Button>
+        <Button color="secondary.alternative">Secondary</Button>
+        <Button variant="outlined" color="error">
+          Error
+        </Button>
+      </Stack>
+    );
+  }
+
+function Layout(){
+  return (
+    <Stack direction="row" spacing={2} p={2}  justifyContent="center">
+      <Box>
+        <Box sx={{ height: '40vh', width: '15vw', bgcolor: 'primary.main'}}></Box>
+      </Box>
+      <Box alignItems="center">
+          <Stack direction="column" spacing={2} >
+            <Box sx={{ height: '10vh', width: '15vw', bgcolor: 'primary.main'}}></Box>
+            <Box sx={{ height: '10vh', width: '15vw', bgcolor: 'primary.main'}}></Box>
+            <Box sx={{ height: '10vh', width: '15vw', bgcolor: 'primary.main'}}></Box>
+          </Stack>
+        
+      </Box>
+      <Box>
+        <Grid container spacing={'8px'}>
+          <Grid item size={6}>
+            <Box sx={{ height: 150, width: 150, bgcolor: 'error.main'}} />
+          </Grid>
+          <Grid item size={6}>
+            <Box sx={{ height: 150, width: 150, bgcolor: 'error.main'}} />
+          </Grid>
+          <Grid item size={12}>
+            <Box sx={{ height: 100, width: 308, bgcolor: 'error.main'}} />
+          </Grid>
+          <Grid item size={12}>
+            <Box sx={{ height: 100, width: 308, bgcolor: 'error.main'}} />
+          </Grid>
+        </Grid>
+      </Box>
+    </Stack>
+
   );
 }
