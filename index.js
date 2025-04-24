@@ -17,6 +17,7 @@ const theme = createTheme({
     palette: {
         primary: {
         main: '#556cd6',
+        white: '#ffffff'
         },
         secondary: {
         main: '#19857b',
@@ -40,7 +41,7 @@ function App() {
         <Box sx={{ flexGrow: 1 }} >
           <Grid container spacing={'8px'}>
             <Grid item size={12}>
-              <Box sx={{ height: '8vh', bgcolor: 'primary.main'}} >
+              <Box sx={{ height: '8vh', bgcolor: 'primary.white'}} >
               
               </Box>
             </Grid>
@@ -65,7 +66,7 @@ function App() {
             </Grid>
       
             <Grid item size={12}>
-              <Box sx={{ height: '25vh', bgcolor: 'info.main'}} />
+              <Box sx={{ height: '25vh', bgcolor: 'primary.white'}} />
             </Grid>
         </Grid>
       </Box>   
@@ -128,31 +129,31 @@ function ColorButtons() {
 
 function Layout(){
   return (
-    <Stack direction="row" spacing={2} p={2}  justifyContent="center">
+    <Stack direction="row" spacing={2} p={2} alignItems="center" justifyContent="center" sx={{height: "45vh"}}>
       <Box>
-        <Box sx={{ height: '40vh', width: '15vw', bgcolor: 'primary.main'}}></Box>
+        <Box sx={{ height: '30vh', width: '15vw', borderRadius: 1,  bgcolor: 'primary.main'}}></Box>
       </Box>
       <Box alignItems="center">
           <Stack direction="column" spacing={2} >
-            <Box sx={{ height: '10vh', width: '15vw', bgcolor: 'primary.main'}}></Box>
-            <Box sx={{ height: '10vh', width: '15vw', bgcolor: 'primary.main'}}></Box>
-            <Box sx={{ height: '10vh', width: '15vw', bgcolor: 'primary.main'}}></Box>
+            <Box sx={{ height: '10vh', width: '15vw', bgcolor: 'primary.main',  borderRadius: 2,}}></Box>
+            <Box sx={{ height: '10vh', width: '15vw', bgcolor: 'primary.main',  borderRadius: 2,}}></Box>
+            <Box sx={{ height: '10vh', width: '15vw', bgcolor: 'primary.main',  borderRadius: 2,}}></Box>
           </Stack>
         
       </Box>
       <Box>
         <Grid container spacing={'8px'}>
           <Grid item size={6}>
-            <Box sx={{ height: 150, width: 150, bgcolor: 'error.main'}} />
+            <Box sx={{ height: 150, width: 150, bgcolor: 'error.main', borderRadius: 2,}} />
           </Grid>
           <Grid item size={6}>
-            <Box sx={{ height: 150, width: 150, bgcolor: 'error.main'}} />
+            <Box sx={{ height: 150, width: 150, bgcolor: 'error.main',  borderRadius: 2,}} />
           </Grid>
           <Grid item size={12}>
-            <Box sx={{ height: 100, width: 308, bgcolor: 'error.main'}} />
+            <Box sx={{ height: 100, width: 308, bgcolor: 'error.main',  borderRadius: 2,}} />
           </Grid>
           <Grid item size={12}>
-            <Box sx={{ height: 100, width: 308, bgcolor: 'error.main'}} />
+            <Box sx={{ height: 100, width: 308, bgcolor: 'error.main',  borderRadius: 2,}} />
           </Grid>
         </Grid>
       </Box>
